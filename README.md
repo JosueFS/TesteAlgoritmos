@@ -9,17 +9,83 @@
 *1)* Implemente um método que crie um novo array baseado nos valores passados.<br>
 Entradas do método (3,a), Resultado do método: ['a', 'a', 'a']
 
+function repeatString(num, str) {
+  if (typeof num !== 'number') {
+    console.log('O primeiro argumento deve ser um número', typeof num);
+  }
+  const arr = new Array(num);
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = str;
+  }
+  return arr;
+}
+
+console.log(repeatString(7, 'oi'));
+
 *2)* Implemente um método que inverta um array, não utilize métodos nativos do array.<br>
 Entrada do método ([1,2,3,4]), Resultado do método: [4,3,2,1]
+
+function invertArray(arr) {
+  const newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr[arr.length - 1 - i] = arr[i];
+  }
+
+  return newArr;
+}
+
+console.log(invertArray([1, 2, 3, 'a', 4]));
 
 *3)* Implemente um método que limpe os itens desnecessários de um array (false, undefined, strings vazias, zero, null).<br>
 Entrada do método ([1,2,'', undefined]), Resultado do método: [1,2]
 
+function cleanArray(arr) {
+  const clearArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      clearArr.push(arr[i]);
+    }
+  }
+
+  return clearArr;
+}
+
+console.log(cleanArray([undefined, 0, 1, 'c', false, true, '', null]));
+
 *4)* Implemente um método que a partir de um array de arrays, converta em um objeto com chave e valor.<br>
 Entrada do método ([["c",2],["d",4]]), Resultado do métdodo: {c:2, d:4}
 
+function arrayToObj(arr) {
+  const newObj = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      newObj[arr[i][0]] = arr[i][1];
+      {
+      }
+    }
+  }
+
+  return newObj;
+}
+
+console.log(
+  arrayToObj([
+    ['c', 2],
+    ['d', 4],
+  ]),
+);
+
+
 *5)* Implemente um método que retorne um array, sem os itens passados por parâmetro depois do array de entrada.
 Entrada do método ([5,4,3,2,5], 5,3), Resultado do método: [4,2]
+
+function removeElements(arr, ...n) {
+  const newArr = arr.filter(a => !n.includes(a));
+
+  console.log(newArr);
+}
+
+removeElements([1, 2, 3, 6], 6);
 
 *6)* Implemente um método que retorne um array, sem valores duplicados.<br>
 Entrada do método ([1,2,3,3,2,4,5,4,7,3]), Resultado do método: [1,2,3,4,5,7]
