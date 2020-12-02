@@ -99,18 +99,69 @@ console.log(removeElements([1, 2, 3, 6], 6));
 *6)* Implemente um método que retorne um array, sem valores duplicados.<br>
 Entrada do método ([1,2,3,3,2,4,5,4,7,3]), Resultado do método: [1,2,3,4,5,7]
 
+```javascript
+function distinctElements(arr) {
+  const newArr = [...new Set(arr)]
+}
+
+console.log(distinctElements([1, 2, 3, 6, 6]));
+```
+
 *7)* Implemente um método que compare a igualdade de dois arrays e retorne um valor booleano.<br>
 Entrada do método ([1,2,3,4],[1,2,3,4]), Resultado do método: true
+
+```javascript
+function arrayCompare(arr) {
+  return (arrA.toString() == ArrB.toString());
+}
+
+console.log(arrayCompare([1, 2, [3], [4, 5]]));
+```
 
 *8)* Implemente um método que remova os aninhamentos de um array de arrays para um array unico.<br>
 Entrada do método ([1, 2, [3], [4, 5]]), Resultado do método: [1, 2, 3, 4, 5]
 
+```javascript
+function arrayDry(arr) {
+  return arr.flat()
+}
+
+console.log(arrayCompare([1, 2, [3], [4, 5]]));
+```
+
 *9)* Implemente um método divida um array por uma quantidade passada por parâmetro.<br>
 Entrada do método ([1, 2, 3, 4, 5], 2), Resultado do método: [[1, 2], [3, 4], [5]]
+
+```js
+function arraySplit(arr, div) {
+  let newArr = [];
+  let size = Math.ceil(arr.length/div);
+  for(let i = 0; i < size; i++){
+    newArr.push(arr.splice(0,div))
+    console.log(1)
+  }
+  return newArr;
+}
+
+console.log(arraySplit([1, 2, 3, 4, 5], 4));
+```
 
 *10)* Implemente um método que encontre os valores comuns entre dois arrays.<br>
 Entrada do método ([6, 8], [8, 9]), Resultado do método: [8]
 
+```js
+function intersection(arrA, arrB){
+    let newArr = [];
+    arrA.map(a => {
+        if(b.includes(a)) {
+            newArr.push(a);
+        }
+});
+    return newArr;
+}
+
+console.log(intersection(a,b))
+```
 
 ps: Esses exercícios são de senso comum da comunidade desenvolvimento, utilize o melhor padrão para implementação, criando uma semântica factível.
 
